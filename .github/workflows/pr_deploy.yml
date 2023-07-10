@@ -1,0 +1,42 @@
+name: CI PULL REQUEST INTEGRATION BRANCH
+
+on:
+  push:
+    branches: 'feature/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest    
+    permissions:
+      contents: read
+      pull-requests: write
+    if: ${{ contains(github.event.head_commit.message, 'publish') }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 17
+        uses: actions/setup-node@v2
+        with:
+          node-version: '17.4.0'
+
+      - name: 🔨 Install Project dependencies
+        run: |
+          npm install -g @angular/cli
+          npm install --force
+
+      - name: 🔨 Build Project
+        run: |
+          ng lint
+          npm run test
+          npm run build
+          
+      - name: pull-request
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "master"
+          pr_title: "Pulling APR ${{ github.ref }} into master"
+          pr_body: "*An automated PR from ${{ github.ref }}*"
+          pr_label: "auto-pr"
+          pr_draft: false
+          github_token: ${{ secrets.GITHUB_TOKEN }}

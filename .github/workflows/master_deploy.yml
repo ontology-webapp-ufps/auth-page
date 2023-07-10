@@ -40,4 +40,4 @@ jobs:
 
     - name: Deploy
       if: success()
-      run: aws s3 sync ./dist/landing s3://ontology-webapp/auth
+      run: aws s3 sync ./dist/auth s3://ontology-webapp/auth/

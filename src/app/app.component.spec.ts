@@ -5,8 +5,11 @@ import { AppComponent } from './app.component';
 import { StorageService } from './core/services/storage-service/storage-service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 describe('AppComponent', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let router: Router;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let mockStorageService: any;
   mockStorageService = jasmine.createSpyObj('StorageService',['isAuthenticated']);
@@ -30,6 +33,7 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
+    router = TestBed.inject(Router); 
     expect(app).toBeTruthy();
   });
 

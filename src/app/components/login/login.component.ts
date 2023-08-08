@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Session } from 'src/app/core/models/session.interface';
-import { LoginRq, User } from 'src/app/core/models/user.interface';
+import { LoginRq } from 'src/app/core/models/user.interface';
 import { StorageService } from 'src/app/core/services/storage-service/storage-service';
 import { UserService } from 'src/app/core/services/user-service/user-service';
 

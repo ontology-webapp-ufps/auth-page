@@ -1,15 +1,29 @@
 <testExecutions version="1">
-  <file path="src/app/components/login/login.component.spec.ts">
-    <testCase name="LoginComponent should create" duration="40"/>
+  <file path="src/app/core/services/storage-service/storage-service.spec.ts">
+    <testCase name="StorageService Debe deber el current user" duration="2"/>
+    <testCase name="StorageService Debe deber el current token" duration="1"/>
+    <testCase name="StorageService Debe crearse correctamente" duration="1"/>
+    <testCase name="StorageService Debe deber el current session" duration="1"/>
+    <testCase name="StorageService Debe realizar un logout de la aplicación" duration="1"/>
+    <testCase name="StorageService Debe validar si el usuario se ha autenticado" duration="1"/>
+  </file>
+  <file path="src/app/core/services/user-service/user-service.spec.ts">
+    <testCase name="UserService Debe crearse correctamente" duration="1"/>
+    <testCase name="UserService Debe hacer login del usuario" duration="2"/>
   </file>
   <file path="src/app/components/register/register.component.spec.ts">
-    <testCase name="RegisterComponent should create" duration="4"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should have as title 'auth'" duration="11"/>
-    <testCase name="AppComponent should create the app" duration="4"/>
+    <testCase name="RegisterComponent should create" duration="25"/>
   </file>
   <file path="src/app/components/slides/slides.component.spec.ts">
-    <testCase name="SlidesComponent should create" duration="6"/>
+    <testCase name="SlidesComponent should create" duration="11"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="16"/>
+    <testCase name="AppComponent should have as title 'auth'" duration="3"/>
+  </file>
+  <file path="src/app/components/login/login.component.spec.ts">
+    <testCase name="LoginComponent login user failed" duration="16"/>
+    <testCase name="LoginComponent login user sucess" duration="4"/>
+    <testCase name="LoginComponent should create" duration="3"/>
   </file>
 </testExecutions>

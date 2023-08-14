@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './input/input.component';
 import { PrimaryButtonComponent } from './primary-button/primary-button.component';
 import { SecundaryButtonComponent } from './secundary-button/secundary-button.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SecundaryButtonComponent } from './secundary-button/secundary-button.co
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   exports: [

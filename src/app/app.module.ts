@@ -7,6 +7,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SlidesComponent } from './components/slides/slides.component';
 import { SharedModule } from './components/shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RedirectGuard } from './core/services/route-service/route.service';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,12 @@ import { SharedModule } from './components/shared/shared.module';
     SlidesComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
   ],
-  providers: [],
+  providers: [RedirectGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,6 +16,14 @@ const routes: Routes = [
     data: {
       externalUrl: environment.home_url
     }
+  },
+  {
+    path: 'dashboard',
+    canActivate: [RedirectGuard],
+    component: RedirectGuard,
+    data: {
+      externalUrl: environment.dashboard_url
+    }
   }
 ];
 

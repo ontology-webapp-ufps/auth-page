@@ -7,18 +7,20 @@
         <div class="item-2-inputs">
             <div class="inputs-container">
                 <app-input 
-                [inputType]="'text'" 
+                    [inputType]="'text'" 
                     [placeHolder]="'Username / email'"
                     [background]="'/assets/icons/dato.png'" 
                     [control]="loginForm.controls['email']"
-                    [validateText]="'Debes ingresar un correo electronico valido'">
+                    [validateText]="'Debes ingresar un correo electronico valido'"
+                    autocomplete="off">
                 </app-input>
                 <app-input 
                     [inputType]="'password'" 
                     [placeHolder]="'Password'" 
                     [background]="'/assets/icons/acceso.png'"
                     [control]="loginForm.controls['password']" 
-                    [validateText]="'La contraseña debe contener entre 4 y 32 caracteres'">
+                    [validateText]="'La contraseña debe contener entre 4 y 32 caracteres'"
+                    autocomplete="off">
                 </app-input>
 
                 <div class="button-container">
